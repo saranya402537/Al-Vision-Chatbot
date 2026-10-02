@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AI Vision Chatbot</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- PWA: installable on Android + iOS -->
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+<meta name="theme-color" content="#0f1115">
+
+<!-- iOS-specific install support -->
+<link rel="apple-touch-icon" href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VisionBot">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🤖 AI Vision Chatbot</h1>
+      <p>Upload a photo, ask a question, get an answer.</p>
+    </header>
+
+    <div class="upload-box" id="dropArea">
+      <img id="preview" class="preview hidden" alt="preview">
+      <div id="uploadPrompt">
+        <span class="icon">📷</span>
+        <p>Click to choose an image</p>
+      </div>
+      <input type="file" id="imageInput" accept="image/*" capture="environment" hidden>
+    </div>
+
+    <div class="input-row">
+      <input type="text" id="questionInput" placeholder="What is in this image?">
+      <button id="sendBtn">SEND</button>
+    </div>
+
+    <div class="chat" id="chat"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
