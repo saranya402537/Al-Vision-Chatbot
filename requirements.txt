@@ -1,4 +1,5 @@
 flask
 python-dotenv
-anthropic
+google-generativeai
 gunicorn
+Pillow
